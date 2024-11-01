@@ -1,4 +1,4 @@
-COLLABPRATORS
+COLLABORATORS
 
 Emmanuel Okine 
 Charlene Duametu
