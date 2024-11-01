@@ -1,6 +1,6 @@
 COLLABPRATORS
 
 Emmanuel Okine 
-Charlene Fafali
+Charlene Duametu
 Patricia 
-GLenn odoi 
+Glenn Odoom
