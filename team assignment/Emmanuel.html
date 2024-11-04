@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Emmanuel Okine | AI Scientist & Web Developer</title>
+    <style>
+        /* Color variables */
+        :root {
+            --primary-color: #ff7f50;
+            --primary-dark: #ff4500;
+            --gradient-start: #ff7f50;
+            --gradient-end: #6a5acd;
+            --text-color: #d1d5db;
+            --bg-color: #1f2937;
+            --card-bg: #2d3748;
+            --hover-bg: #374151;
+        }
+
+        /* Reset */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        @keyframes gradientBG {
+            0% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+            100% { background-position: 0% 50%; }
+        }
+
+        /* Body styling */
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: var(--text-color);
+            background-color: var(--bg-color);
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 20px;
+        }
+
+        /* Container */
+        .profile-container {
+            max-width: 800px;
+            width: 100%;
+            background-color: var(--card-bg);
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.25);
+            padding: 2rem;
+            animation: fadeIn 0.8s ease-out;
+        }
+
+        /* Header */
+        .header-content {
+            text-align: center;
+            margin-bottom: 1.5rem;
+        }
+
+        h1 {
+            font-size: 2.5rem;
+            font-weight: bold;
+            color: var(--primary-color);
+            background: linear-gradient(45deg, var(--gradient-start), var(--gradient-end));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            animation: gradientBG 4s ease infinite;
+        }
+
+        p.title {
+            font-size: 1.25rem;
+            color: var(--text-color);
+            font-style: italic;
+            margin: 0.5rem 0;
+        }
+
+        /* Profile Image */
+        .profile-image-container {
+            width: 180px;
+            height: 180px;
+            margin: 0 auto 1.5rem;
+            border-radius: 50%;
+            overflow: hidden;
+            background: linear-gradient(135deg, var(--gradient-start), var(--gradient-end));
+            padding: 5px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        }
+
+        .profile-image {
+            width: 100%;
+            height: 100%;
+            border-radius: 50%;
+            object-fit: cover;
+            transition: transform 0.3s ease;
+        }
+
+        .profile-image:hover {
+            transform: scale(1.1);
+        }
+
+        /* Bio */
+        .bio {
+            text-align: center;
+            font-size: 1.1rem;
+            color: #cbd5e0;
+            margin-bottom: 2rem;
+        }
+
+        /* Contact and skills */
+        .contact-info, .skills-grid {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 1rem;
+            margin-bottom: 2rem;
+        }
+
+        .contact-item, .skill-item {
+            background-color: var(--hover-bg);
+            padding: 0.75rem 1.5rem;
+            border-radius: 8px;
+            font-weight: 500;
+            color: var(--text-color);
+            text-align: center;
+            transition: background-color 0.3s ease;
+            text-decoration: none;
+            display: inline-block;
+        }
+
+        .contact-item:hover, .skill-item:hover {
+            background-color: var(--primary-dark);
+            color: #fff;
+        }
+
+        /* Footer */
+        footer {
+            text-align: center;
+            padding-top: 1.5rem;
+            color: var(--text-color);
+        }
+
+        footer p {
+            margin: 0;
+            color: var(--text-color);
+        }
+    </style>
+</head>
+<body>
+    <div class="profile-container">
+        <!-- Header -->
+        <div class="header-content">
+            <h1>Emmanuel Okine</h1>
+            <p class="title">Web Developer | AI Scientist | Computer Science Student at Ashesi</p>
+        </div>
+
+        <!-- Profile Image -->
+        <div class="profile-image-container">
+            <img src="/Users/cliq-tech/Desktop/Continous-Delivery-Integration/team assignment/Emmapic.jpeg" alt="Emmanuel Okine" class="profile-image">
+        </div>
+
+        <!-- Bio -->
+        <p class="bio">My interest revolve around creating innovative solutions that solve real-world problems. My skills are AI, web development, and cloud computing.</p>
+
+        <!-- Contact Info -->
+        <div class="contact-info">
+            <a href="https://github.com/emmanuelokine" target="_blank" class="contact-item">GitHub</a>
+        </div>
+
+        <!-- Skills -->
+        <div class="skills-grid">
+            <span class="skill-item">Java</span>
+            <span class="skill-item">Python</span>
+            <span class="skill-item">Artificial Intelligence</span>
+        </div>
+
+        <!-- Footer -->
+        <footer>
+            <p>&copy; 2024 Emmanuel Okine</p>
+        </footer>
+    </div>
+</body>
+</html>
