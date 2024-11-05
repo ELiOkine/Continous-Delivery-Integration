@@ -18,9 +18,10 @@ jobs:
       with:
         node-version: '14'
 
-    - name: Build and Deploy
+    - name: Build the Site
       run: |
         mkdir -p build && cp -R * build
+      shell: bash
 
     - name: Deploy to GitHub Pages
       uses: peaceiris/actions-gh-pages@v3
