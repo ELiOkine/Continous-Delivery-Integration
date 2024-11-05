@@ -1,190 +1,200 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Dashboard</title>
-    <style>
-        /* Root Colors */
-        :root {
-            --primary-color: #4c51bf;
-            --secondary-color: #38b2ac;
-            --bg-color: #f7fafc;
-            --text-color: #2d3748;
-            --card-bg: #ffffff;
-            --hover-bg: #e2e8f0;
-        }
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Dashboard</title>
+		<style>
+			/* Root Colors */
+			:root {
+				--primary-color: #4c51bf;
+				--secondary-color: #38b2ac;
+				--bg-color: #f7fafc;
+				--text-color: #2d3748;
+				--card-bg: #ffffff;
+				--hover-bg: #e2e8f0;
+			}
 
-        /* Reset */
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
+			/* Reset */
+			* {
+				margin: 0;
+				padding: 0;
+				box-sizing: border-box;
+			}
 
-        /* Body */
-        body {
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            background-color: var(--bg-color);
-            display: flex;
-            min-height: 100vh;
-            color: var(--text-color);
-        }
+			/* Body */
+			body {
+				font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+				background-color: var(--bg-color);
+				display: flex;
+				min-height: 100vh;
+				color: var(--text-color);
+			}
 
-        /* Sidebar Styling */
-        .sidebar {
-            width: 250px;
-            background-color: var(--primary-color);
-            color: #fff;
-            display: flex;
-            flex-direction: column;
-            padding-top: 2rem;
-            padding-bottom: 2rem;
-            box-shadow: 2px 0 5px rgba(0, 0, 0, 0.1);
-        }
+			/* Sidebar Styling */
+			.sidebar {
+				width: 250px;
+				background-color: var(--primary-color);
+				color: #fff;
+				display: flex;
+				flex-direction: column;
+				padding-top: 2rem;
+				padding-bottom: 2rem;
+				box-shadow: 2px 0 5px rgba(0, 0, 0, 0.1);
+			}
 
-        /* Sidebar Header */
-        .sidebar-header {
-            text-align: center;
-            font-size: 1.5rem;
-            font-weight: bold;
-            margin-bottom: 1.5rem;
-        }
+			/* Sidebar Header */
+			.sidebar-header {
+				text-align: center;
+				font-size: 1.5rem;
+				font-weight: bold;
+				margin-bottom: 1.5rem;
+			}
 
-        /* Sidebar Links */
-        .sidebar-menu {
-            list-style: none;
-            padding: 0;
-        }
+			/* Sidebar Links */
+			.sidebar-menu {
+				list-style: none;
+				padding: 0;
+			}
 
-        .sidebar-menu li {
-            padding: 0.8rem 1.5rem;
-            transition: background-color 0.3s ease;
-        }
+			.sidebar-menu li {
+				padding: 0.8rem 1.5rem;
+				transition: background-color 0.3s ease;
+			}
 
-        .sidebar-menu a {
-            text-decoration: none;
-            color: #fff;
-            font-size: 1.1rem;
-            display: block;
-            transition: color 0.3s ease;
-        }
+			.sidebar-menu a {
+				text-decoration: none;
+				color: #fff;
+				font-size: 1.1rem;
+				display: block;
+				transition: color 0.3s ease;
+			}
 
-        .sidebar-menu li:hover {
-            background-color: var(--secondary-color);
-        }
+			.sidebar-menu li:hover {
+				background-color: var(--secondary-color);
+			}
 
-        .sidebar-menu li:hover a {
-            color: #f7fafc;
-        }
+			.sidebar-menu li:hover a {
+				color: #f7fafc;
+			}
 
-        /* Main Content */
-        .content {
-            flex-grow: 1;
-            padding: 2rem;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            justify-content: center;
-        }
+			/* Main Content */
+			.content {
+				flex-grow: 1;
+				padding: 2rem;
+				display: flex;
+				flex-direction: column;
+				align-items: center;
+				justify-content: center;
+			}
 
-        /* Content Header */
-        .content h1 {
-            font-size: 2.5rem;
-            color: var(--primary-color);
-            margin-bottom: 1rem;
-            text-align: center;
-        }
+			/* Content Header */
+			.content h1 {
+				font-size: 2.5rem;
+				color: var(--primary-color);
+				margin-bottom: 1rem;
+				text-align: center;
+			}
 
-        /* Content Description */
-        .content p {
-            font-size: 1.2rem;
-            color: var(--text-color);
-            text-align: center;
-            max-width: 600px;
-        }
+			/* Content Description */
+			.content p {
+				font-size: 1.2rem;
+				color: var(--text-color);
+				text-align: center;
+				max-width: 600px;
+			}
 
-        /* Dashboard Cards */
-        .dashboard-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
-            gap: 1.5rem;
-            margin-top: 2rem;
-            width: 100%;
-            max-width: 800px;
-        }
+			/* Dashboard Cards */
+			.dashboard-grid {
+				display: grid;
+				grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+				gap: 1.5rem;
+				margin-top: 2rem;
+				width: 100%;
+				max-width: 800px;
+			}
 
-        .card {
-            background-color: var(--card-bg);
-            padding: 2rem;
-            text-align: center;
-            border-radius: 10px;
-            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-            transition: transform 0.3s ease, box-shadow 0.3s ease;
-        }
+			.card {
+				background-color: var(--card-bg);
+				padding: 2rem;
+				text-align: center;
+				border-radius: 10px;
+				box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+				transition: transform 0.3s ease, box-shadow 0.3s ease;
+			}
 
-        .card:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
-        }
+			.card:hover {
+				transform: translateY(-5px);
+				box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+			}
 
-        .card h2 {
-            font-size: 1.5rem;
-            color: var(--primary-color);
-            margin-bottom: 0.5rem;
-        }
+			.card h2 {
+				font-size: 1.5rem;
+				color: var(--primary-color);
+				margin-bottom: 0.5rem;
+			}
 
-        .card a {
-            text-decoration: none;
-            color: var(--secondary-color);
-            font-size: 1.1rem;
-            font-weight: bold;
-            display: inline-block;
-            margin-top: 0.5rem;
-        }
+			.card a {
+				text-decoration: none;
+				color: var(--secondary-color);
+				font-size: 1.1rem;
+				font-weight: bold;
+				display: inline-block;
+				margin-top: 0.5rem;
+			}
 
-        .card a:hover {
-            color: var(--primary-color);
-        }
-    </style>
-</head>
-<body>
-    <!-- Sidebar -->
-    <aside class="sidebar">
-        <div class="sidebar-header">Dashboard</div>
-        <ul class="sidebar-menu">
-            <li><a href="/Users/cliq-tech/Desktop/Continous-Delivery-Integration/team assignment/index.html">Home</a></li>
-            <li><a href="/Users/cliq-tech/Desktop/Continous-Delivery-Integration/team assignment/Charlene.html">Charlene</a></li>
-            <li><a href="/Users/cliq-tech/Desktop/Continous-Delivery-Integration/team assignment/Emmanuel.html">Emmanuel</a></li>
-            <li><a href="/Users/cliq-tech/Desktop/Continous-Delivery-Integration/team assignment/Glenn.html">Glenn</a></li>
-            <li><a href="/Users/cliq-tech/Desktop/Continous-Delivery-Integration/team assignment/Patricia.html">Patricia</a></li>
-        </ul>
-    </aside>
+			.card a:hover {
+				color: var(--primary-color);
+			}
+		</style>
+	</head>
+	<body>
+		<!-- Sidebar -->
+		<aside class="sidebar">
+			<div class="sidebar-header">Dashboard</div>
+			<ul class="sidebar-menu">
+				<li><a href="home.html">Home</a></li>
+				<li><a href="Charlene.html">Charlene</a></li>
+				<li><a href="Emmanuel.html">Emmanuel</a></li>
+				<li><a href="Glenn.html">Glenn</a></li>
+				<li><a href="Patricia.html">Patricia</a></li>
+			</ul>
+		</aside>
 
-    <!-- Main Content -->
-    <div class="content">
-        <h1>Welcome to Bisco Company</h1>
-        <p>Explore our team of highly skilled developers, each with a wealth of expertise ready to bring value to your projects. Browse through our profiles to find qualified professionals and easily access their contact information for your personal or business needs.</p>
-        
-        <!-- Dashboard Grid -->
-        <div class="dashboard-grid">
-            <div class="card">
-                <h2>Charlene</h2>
-                <a href="/Users/cliq-tech/Desktop/Continous-Delivery-Integration/team assignment/Charlene.html">View Charlene's Page</a>
-            </div>
-            <div class="card">
-                <h2>Emmanuel</h2>
-                <a href="/Users/cliq-tech/Desktop/Continous-Delivery-Integration/team assignment/Emmanuel.html">View Emmanuel's Page</a>
-            </div>
-            <div class="card">
-                <h2>Glenn</h2>
-                <a href="/Users/cliq-tech/Desktop/Continous-Delivery-Integration/team assignment/Glenn.html">View Glenn's Page</a>
-            </div>
-            <div class="card">
-                <h2>Patricia</h2>
-                <a href="/Users/cliq-tech/Desktop/Continous-Delivery-Integration/team assignment/Patricia.html">View Patricia's Page</a>
-            </div>
-        </div>
-    </div>
-</body>
+		<!-- Main Content -->
+		<div class="content">
+			<h1>Welcome to Bisco Company</h1>
+			<p>
+				Explore our team of highly skilled developers, each with a
+				wealth of expertise ready to bring value to your projects.
+				Browse through our profiles to find qualified professionals and
+				easily access their contact information for your personal or
+				business needs.
+			</p>
+
+			<!-- Dashboard Grid -->
+			<div class="dashboard-grid">
+				<div class="card">
+					<h2>Charlene</h2>
+					<a href="Charlene.html">View Charlene's Page</a>
+				</div>
+				<div class="card">
+					<h2>Emmanuel</h2>
+					<a href="Emmanuel.html">View Emmanuel's Page</a>
+				</div>
+				<div class="card">
+					<h2>Glenn</h2>
+					<a href="Glenn.html">View Glenn's Page</a>
+				</div>
+				<div class="card">
+					<h2>Patricia</h2>
+					<a href="Patricia.html">View Patricia's Page</a>
+				</div>
+				<div class="card">
+					<h2>Oheneba</h2>
+					<a href="oheneba.html">View Oheneba's Page</a>
+				</div>
+			</div>
+		</div>
+	</body>
 </html>
