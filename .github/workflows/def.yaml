@@ -20,7 +20,7 @@ jobs:
 
     - name: Build the Site
       run: |
-        mkdir -p build && cp -R * build
+        mkdir -p build && cp -R $(find . -mindepth 1 -maxdepth 1 ! -name build) build
       shell: bash
 
     - name: Deploy to GitHub Pages
